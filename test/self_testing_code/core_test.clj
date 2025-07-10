@@ -8,4 +8,7 @@
     (is (= 15 (taxa-de-entrega 100))))
   (testing "Se for maior que 100 e menor que 200, 5 reais"
     (is (= 5 (taxa-de-entrega 100.01)))
-    (is (= 5 (taxa-de-entrega 200)))))
+    (is (= 5 (taxa-de-entrega 200))))
+  (testing "Se for acima de 200, a taxa é gratuita"
+    (is (= 0 (taxa-de-entrega 200.01)))
+    (is (= 0 (taxa-de-entrega 1999.99)))))
