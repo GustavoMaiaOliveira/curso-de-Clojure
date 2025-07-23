@@ -1,4 +1,4 @@
-(ns self-testing-code.core)
+(ns banco.imposto.logic)
 
 ;(conj nil "Banana")
 ;
@@ -56,14 +56,25 @@
 ;
 ;(imprime-soma)
 
-(type 10) ; type long
-(type 10.0) ; type double
-(type(/ 10 3)) ; type ratio
-(type (* 3 (/ 10 3))) ; type BigInt
-(type 10N) ; type BigInt
-(type 10M) ; type BigDecimal
-(type "Maia") ; type String
-(type nil) ; type nil
-(type [])
-(type [1 2 3])
-(type println)
+;(type 10) ; type long
+;(type 10.0) ; type double
+;(type(/ 10 3)) ; type ratio
+;(type (* 3 (/ 10 3))) ; type BigInt
+;(type 10N) ; type BigInt
+;(type 10M) ; type BigDecimal
+;(type "Maia") ; type String
+;(type nil) ; type nil
+;(type []) ; type PersistentVector
+;(type [1 2 3]) ; type PersistentVector
+;(type println) ; type core$println
+
+(defn- esta-na-faixa-de-isencao?
+  [valor]
+  (< valor 1000))
+
+(defn imposto-retido-fonte
+  [valor]
+  (if (esta-na-faixa-de-isencao? valor)
+    0
+    (* valor 0.1)))
+
