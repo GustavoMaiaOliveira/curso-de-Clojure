@@ -34,7 +34,7 @@
 ;
 
 (defn consulta-taxa-padrao-por-http
-  "Imagine que este código daz uma requisição http para obter a taxa-padrao."
+  "Imagine que este código faz uma requisição http para obter a taxa-padrao."
   []
   0.30)
 
@@ -61,24 +61,31 @@
 (imposto-retido consulta-taxa-padrao-por-http 1000)
 (imposto-retido consulta-taxa-padrao-fixa 1000)
 
-(defn minha-taxa-padrao
-  []
-  consulta-taxa-padrao-fixa)
+;(defn minha-taxa-padrao
+;  []
+;consulta-taxa-padrao-fixa)
+;
+;(minha-taxa-padrao)
+;
+;(imposto-retido (minha-taxa-padrao) 2000)
 
-(minha-taxa-padrao)
+(defn escolhe-consulta-taxa-padrao
+  [ambiente]
+(if (= ambiente :teste)
+  consulta-taxa-padrao-por-http
+  consulta-taxa-padrao-fixa))
 
+(imposto-retido
+  (escolhe-consulta-taxa-padrao :producao)2000)
 
-
-
-
-(defn crie-meu-nome
-  [user]
-  (str "Seu nome: " (:name user) " " (:middle-name user) " " (:last-name user)))
-
-
-(def user-data
-  {:last-name "Oliveira"
-   :name  "Gustavo"
-   :middle-name "Maia"})
-
-(crie-meu-nome user-data)
+;(defn crie-meu-nome
+;  [user]
+;  (str "Seu nome: " (:name user) " " (:middle-name user) " " (:last-name user)))
+;
+;
+;(def user-data
+;  {:last-name "Oliveira"
+;   :name  "Gustavo"
+;   :middle-name "Maia"})
+;
+;(crie-meu-nome user-data))
