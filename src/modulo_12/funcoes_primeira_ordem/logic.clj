@@ -89,3 +89,16 @@
 ;   :middle-name "Maia"})
 ;
 ;(crie-meu-nome user-data))
+
+((fn [x] (* 2 x))3)
+
+(#(* 2 %)5)
+
+(#(+ % %)2)
+
+((fn [x y] (+ x y))5 6)
+
+(#(+ %1 %2)6 7)
+
+((constantly 20) 1 2 3 4 5 6)
+
