@@ -1,4 +1,4 @@
-(ns modulo-12.funcoes-primeira-ordem.logic)
+(ns modulo-12-funcoes-primeira-ordem.logic)
 
 (defn imposto-retido
   "Se salário abaixo de 1000 reais não tem imposto. Acima ou igual a 1000 deve aplicar imposto padrão."
