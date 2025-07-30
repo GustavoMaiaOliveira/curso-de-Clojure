@@ -102,3 +102,6 @@
 
 ((constantly 20) 1 2 3 4 5 6)
 
+(imposto-retido (fn [] 0.7) 3000)
+
+(imposto-retido (constantly 0.27) 3000)
