@@ -9,4 +9,37 @@
 
 (defn quantidade-estudantes-no-quinto-ano
   [estudantes]
-  (filter predicato estudantes))
+  (count (filter #(= 5 %) estudantes)))
+
+(quantidade-estudantes-no-quinto-ano [5 6 7 5])
+
+;DESAFIO 2: crie uma função que recebe um vetor de idades e retorna como soma
+; Ex: (soma-das-idades [5 10 5]) ; deve retornar 20
+;
+
+;(defn soma-as-idades
+;  [idade1 idade2 idade3]
+;  (+ idade1 idade2 idade3))
+;
+;(soma-as-idades 5 10 5)
+
+(+(+ 5 10)5 )
+
+(defn soma-das-idades
+  [idades]
+  (reduce + idades))
+
+(soma-das-idades [])
+
+;Desafio 3: crie uma função que recebe um vetor de nomes e retorne o tamanho médio dos nomes
+;Ex: (tamanho-médio-dos-nomes["Márcio" "João"]) ; deve retornar 5
+
+(defn contar-letras
+  [nomes]
+  (count nomes))
+
+(contar-letras "teste")
+
+(defn somar-letras-dos-nomes
+  [numeros]
+  (reduce + (contar-letras["joao"])))
