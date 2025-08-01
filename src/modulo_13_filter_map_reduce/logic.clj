@@ -23,6 +23,8 @@
 ;
 ;(soma-as-idades 5 10 5)
 
+(5 + 10 + 5)
+
 (+(+ 5 10)5 )
 
 (defn soma-das-idades
@@ -43,3 +45,13 @@
 (defn somar-letras-dos-nomes
   [numeros]
   (reduce + (contar-letras["joao"])))
+
+;["Marcio" "João"] -> [6 4] -> 5
+
+(count "teste")
+
+(defn tamanhp-medio-dos-nomes
+  [nomes]
+  (map count nomes))
+
+(tamanhp-medio-dos-nomes ["marcio" "joao"])
