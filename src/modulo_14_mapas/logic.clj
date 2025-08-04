@@ -23,4 +23,9 @@
 ((compras) :tomate)
 (:tomate (compras))
 
+(:preco(:tomate(compras)))
+(:quantidade(:arroz(compras)))
+
+(:batata(compras){:quantidade 0 :preco 0})
+
 
